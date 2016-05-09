@@ -8,8 +8,8 @@ android {
         applicationId "com.tencent.wefpmonitor"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 35
-        versionName "2.1.4"
+        versionCode 1
+        versionName "1.0.1"
 
         ndk {
             moduleName "WetestForAndroid" // <-- This is the name of my C++ module!
