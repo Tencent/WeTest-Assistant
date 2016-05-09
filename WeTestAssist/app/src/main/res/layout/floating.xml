@@ -1,0 +1,101 @@
+
+<RelativeLayout
+    android:id="@+id/main_content"
+    android:layout_width="200dp"
+    android:layout_height="@dimen/float_layout_height"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:layout_marginLeft="45dp"
+    >
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="23dp"
+            android:id="@+id/time"
+            android:gravity="center"
+            android:background="@drawable/float_time"
+            android:text="0S"
+            android:textSize="10sp"
+            android:paddingTop="3dp"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="35dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fps"
+            android:gravity="center"
+            android:text="FPS : --"
+            android:background="#1F000000"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/floatbtnLayout"
+
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/float_scene_start"
+            android:id="@+id/floatBtn"/>
+
+
+        <!--<android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/float_bk"
+            app:backgroundTint="#2a5162"
+            app:rippleColor="#2a5162"
+            app:elevation="3dp"
+
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            app:borderWidth="0dp"
+            app:layout_anchor="@id/main_content"
+            app:pressedTranslationZ="12dp"
+            android:id="@+id/floatBtn"
+
+            /> -->
+    </LinearLayout>
+
+</RelativeLayout>
+<!--<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="50dp"
+    >
+
+
+
+</android.support.design.widget.CoordinatorLayout>-->

@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.tencent.wetest.activity.TestResultsActivity">
+    <item android:id="@+id/action_del"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/delete"
+        android:orderInCategory="100"  />
+</menu>

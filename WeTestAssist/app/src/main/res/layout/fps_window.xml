@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/floatbtnLayout"
+        >
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:src="@drawable/float_exit"
+            android:id="@+id/floatBtnExit"/>
+
+
+       <!-- <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchorGravity="top"
+            android:src="@drawable/logo"
+            app:backgroundTint="#ff87ffeb"
+            app:rippleColor="#33728dff"
+            app:elevation="6dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            app:borderWidth="0dp"
+            app:layout_anchor="@id/main_content"
+            app:pressedTranslationZ="12dp"
+            android:id="@+id/floatBtnExit"
+
+            /> -->
+    </LinearLayout>
+
+</RelativeLayout>

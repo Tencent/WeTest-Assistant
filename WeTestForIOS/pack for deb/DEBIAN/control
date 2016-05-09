@@ -1,0 +1,9 @@
+Package: tencent.WeTest
+Version: 1.0
+Section: tbt
+Priority: required
+Architecture: all
+Maintainer:Tencent
+Author: Tencent
+Name: WeTest
+Description: Best Choice

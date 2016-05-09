@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">WeTest助手</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add_tag_tip">控件数过多</string>
+    <string name="action_settings">设置</string>
+    <string name="title_performance">前台性能</string>
+    <string name="title_record">测试记录</string>
+    <string name="app_description">WeTest助手</string>
+    <string name="logout">注销登录</string>
+    <string name="recommend_to_friend">推荐给朋友</string>
+    <string name="version_title">版本</string>
+    <string name="version_content">V 2.1.1</string>
+    <string name="log_item_title">今天</string>
+    <string name="log_item_content_name">微测</string>
+    <string name="log_item_content_time">2015/8/11</string>
+    <string name="test_start">开始测试</string>
+    <string name="select_proj_title">项目名称</string>
+    <string name="select_app_tile">选择应用</string>
+    <string name="select_task_tile">选择任务</string>
+    <string name="select_app_content">微测</string>
+    <string name="select_proj_content">wetest</string>
+    <string name="home_bottom_title">当前可测 ：CPU 内存 流量</string>
+    <string name="home_bottom_is_root">该手机未ROOT</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="action_feedback">反馈</string>
+    <string name="action_about">关于</string>
+
+    <!-- for home page -->
+    <string name="invalid_app">应用不合法</string>
+    <string name="select_valid_app">应选择正确应用</string>
+    <string name="create_proj_please">请添加项目</string>
+    <string name="select_proj_please">请选择项目</string>
+    <!-- for SettingActivity -->
+    <string name="open_window_up_19">开启 权限管理 《显示悬浮窗》</string>
+    <string name="open_window_down_19">开启 第二项 《显示悬浮窗》</string>
+
+    <!--for LoginActivity-->
+    <string name="title_activity_login_actvity">LoginActvity</string>
+    <string name="app_title">WeTest</string>
+    <string name="app_name_description">性能测试</string>
+    <string name="oa_login">       RTX登录</string>
+    <string name="oa_web_login">       RTX网页登录</string>
+
+    <string name="qq_login">       QQ登录</string>
+    <string name="copyrights">Copyright © 1998 - 2015 Tencent. All Rights Reserved</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="oa_login_fail">OA快速登录失败(请尝试使用Token登录)</string>
+    <string name="oa_login_cancel">OA快速登录已取消</string>
+    <string name="on_auth_fail">鉴权失败</string>
+    <string name="no_right">没有权限!</string>
+    <string name="invalid_net">网络异常:</string>
+    <string name="login_exception">登录异常</string>
+
+
+    <!--for LoadingActivity-->
+    <string name="welcome_title">欢迎使用WeTest助手</string>
+    <string name="title_activity_web_qqlogin">WebQQLogin</string>
+    <string name="title_activity_code_page">CodePageActivity</string>
+    <string name="title_activity_web_oalogin">WebOALoginActivity</string>
+    <string name="title_activity_app_list">AppListActivity</string>
+
+    <string name="app_select">选择应用</string>
+    <string name="remote_ctr_title">云真机遥控器</string>
+    <string name="boradcast">公告中心</string>
+    <string name="title_activity_test_results">TestResultsActivity</string>
+
+    <!--for TestResultsActivity-->
+    <string name="test_phone_manu_title">测试机型:</string>
+    <string name="test_time_title">测试时长:</string>
+    <string name="test_app_name_title">应用名称:</string>
+    <string name="test_proj_name_title">项目名称:</string>
+    <string name="test_user_nick_title">测试人员:</string>
+    <string name="show_data_detail">查看数据</string>
+    <string name="no_data_detail">无查看 数据</string>
+    <string name="test_already_upload">已上传</string>
+    <string name="test_exception">测试异常返回</string>
+    <string name="game_exit">测试游戏退出</string>
+    <string name="no_result">无测试结果产生</string>
+    <string name="confirm">确认</string>
+    <string name="is_running">正在执行</string>
+    <string name="check_network">请检查网络后重试</string>
+    <string name="retry">重试</string>
+    <string name="cancel">取消</string>
+    <string name="confirm_3G_upload">当前为非WIFI环境，确定上传？</string>
+    <string name="btnOK">确定</string>
+    <string name="uploading">文件正在上传</string>
+    <string name="test_result">测试结果</string>
+    <string name="test_data">测试数据</string>
+    <string name="is_not_upload">未上传</string>
+    <string name="upload_success">文件上传成功</string>
+    <string name="upload_fail">文件上传失败</string>
+    <string name="del_record">确定删除该记录?</string>
+    <string name="title_activity_log_detail">LogDetailActivity</string>
+    <string name="record_already_deleted">记录已被删除</string>
+    <string name="no_results_upload">无文件上传</string>
+    <string name="file_uploading">文件上传中</string>
+
+    <string name="oa_login_type">RTX登录</string>
+    <string name="qq_login_type">QQ网页登录</string>
+    <string name="report_tip">上传成功后,可以登录</string>
+    <string name="wt_url"><a href="http://www.qq.com">wetest.qq.com</a></string>
+    <string name="report_tail">在\"我的主页\"中找到性能测试报告</string>
+
+    <!--for FloatViewService-->
+    <string name="scene">场景</string>
+    <string name="start">开始</string>
+    <string name="end">结束</string>
+    <string name="scene_confirm">请输入测试场景</string>
+    <string name="ctr_exit">确定退出远程调试?</string>
+    <string name="ctr_clear">确定清空?</string>
+    <string name="timeout_confirm">测试时间已大于2小时，是否结束？(剩余2小时)</string>
+    <!--for FloatExitService-->
+    <string name="exit_test_confirm">确定退出测试?</string>
+    <string name="exit">退出</string>
+    <string name="continue_test">继续</string>
+    <string name="scene_is_not_end">请先结束场景</string>
+
+    <!--for MessageActivity-->
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="message">消息</string>
+
+    <string name="is_read">已读</string>
+    <string name="not_read">未读</string>
+    <string name="title_activity_msg_detail">MsgDetailActivity</string>
+
+    <string name="send_text_default">有什么想说的......</string>
+    <string name="app_share">分享</string>
+    <string name="app_cancel">取消</string>
+    <string name="ver_skip">跳过</string>
+    <string name="app_ok">确定</string>
+    <string name="title_activity_rapid_fab">RapidFABActivity</string>
+
+
+    <string name="clear_record">清空历史记录</string>
+    <string name="clear_record_confirm">确定清空历史记录?</string>
+    <string name="onekeyCommit">一键上传</string>
+
+
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放刷新</string>
+    <string name="refreshing">正在刷新</string>
+    <string name="title_activity_refresh">RefreshActivity</string>
+    <string name="loading">正在加载</string>
+    <string name="pullup_to_load">正在加载中</string>
+
+    <string name="app_english_name">WeTest</string>
+
+    <string name="delete">删除</string>
+    <string name="help">帮助</string>
+    <string name="add_flag">添加标记</string>
+    <string name="drag_tip">说明：长按拖动圆圈到控制器上，标记点击位置</string>
+    <!--for update-->
+    <string name="is_new">已是最新版本</string>
+    <string name="net_not_work">网络不给力!</string>
+    <string name="suggest">温馨提示</string>
+    <string name="wifi_suggest">非WIFI环境，是否继续?</string>
+    <string name="continue_upate">继续</string>
+    <string name="check_updated">发现新版本</string>
+    <string name="update_content">更新内容:</string>
+    <string name="app_update">更新</string>
+    <string name="apk_download">apk下载更新</string>
+    <string name="downloading">正在下载</string>
+    <string name="download_success">下载成功</string>
+    <string name="ready_to_download">准备下载....</string>
+
+    <string name="wx_share">微信分享</string>
+    <string name="wx_share_success">微信分享成功</string>
+    <string name="wx_share_fail">微信分享失败</string>
+    <string name="wx_share_content">分享内容</string>
+    <!-- for WTMainActivity -->
+
+    <string name="test_not_complete">测试未完成</string>
+    <string name="one_more_time_exit">再按一次退出</string>
+
+    <!-- for LoginActivity -->
+
+    <string name="login_fail">登录失败</string>
+    <string name="app_title_content">app自定义title内容</string>
+    <string name="app_title_message">app自定义message内容</string>
+    <string name="executing">正在执行</string>
+    <string name="qq_login_fail">快速登录失败，请提示用户输入密码登录.</string>
+    <string name="A2_fail">A2失效，请尝试用A1登录或直接用密码登录</string>
+    <string name="jump_to_web_oa">是否跳转到网页登录?\n(支持合作伙伴Outlook登录)</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="it_login_content">腾讯员工登录</string>
+    <!-- common-->
+
+    <string name="explain">说明</string>
+    <string name="explain_content">您的手机没有ROOT,只能获取部分性能数据，不能获取FPS数据</string>
+    <string name="i_know">我知道了</string>
+    <string name="phone_is_root">该手机已root</string>
+
+    <!-- for openfloatwindow-->
+    <string name="right_control">权限管理</string>
+    <string name="open">1.打开手机管家</string>
+    <string name="page">页面</string>
+    <string name="open_float_window_right">2.点击开启悬浮窗</string>
+    <string name="mobile_manager">打开手机管家</string>
+    <string name="mobile_p7">p7手机</string>
+    <string name="mobile_p8">p8手机</string>
+    <string name="select_setting">2.点击"设置"选项</string>
+    <string name="select_window_manager">3.选中”悬浮窗管理“</string>
+    <string name="set_win_manager">4.设置对应的应用，显示悬浮窗</string>
+    <string name="select_window_manager_p8">2.选中”悬浮窗管理“</string>
+    <string name="open_win_p8">3.将对应的应用选中开启悬浮窗。</string>
+    <string name="open_the_float_window">开启悬浮窗</string>
+    <!-- wetestcontroller -->
+
+
+    <string name="withoutui">白板遥控</string>
+    <string name="withui">实时画面</string>
+    <string name="qrcode_scan">二维码扫描</string>
+    <string name="title_activity_remote_controller">RemoteControllerActivity</string>
+
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="scan_tips">将二维码图片对准扫描框即可自动扫描</string>
+
+    <string name="capture">截图</string>
+    <string name="decode_error">二维码解析错误</string>
+    <string name="title_activity_wtmain">WTMainActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_float_win_open">FloatWinOpenActivity</string>
+    <string name="title_activity_hwfloat_win_open">HWFloatWinOpenActivity</string>
+
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="otherday">最近</string>
+
+    <string name="first_one">第一种</string>
+    <string name="second_one">第二种</string>
+    <string name="title_activity_recommand">RecommandActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_data_detail">DataDetailActivity</string>
+
+</resources>

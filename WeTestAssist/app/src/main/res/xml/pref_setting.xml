@@ -1,0 +1,31 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="category_one"
+        android:title="">
+
+    <SwitchPreference
+        android:key="setting_fps"
+        android:title="@string/setting_fps_title"
+        android:summary="@string/setting_fps_summary"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="setting_scene"
+        android:scrollbarStyle="outsideInset"
+        android:title="@string/setting_scene_title"
+        android:summary="@string/setting_scene_summary"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="setting_wifi"
+        android:title="@string/setting_wifi_upload_title"
+        android:summary="@string/setting_wifi_upload_summary"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="setting_float_window"
+        android:title="@string/open_float_window"
+        android:summary="@string/open_float_window_summary"
+        android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

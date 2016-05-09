@@ -1,0 +1,63 @@
+<com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout xmlns:rfal="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_rfal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    rfal:rfal_frame_color="#ffffff"
+    rfal:rfal_frame_alpha="0.7">
+
+    <!--<com.tencent.wetest.common.ui.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/refresh_head" />
+
+        支持AbsListView的所有子类
+        <ExpandableListView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:divider="@color/material_blue_grey_800"
+            android:dividerHeight="1dp" >
+        </ExpandableListView  >
+
+    </com.tencent.wetest.common.ui.PullToRefreshLayout>-->
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <ExpandableListView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+
+            android:divider="#E8E8E8"
+            android:dividerHeight="1dp" >
+        </ExpandableListView  >
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
+        xmlns:rfab="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/oneKeyCommit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"
+        rfab:rfab_size="normal"
+        rfab:rfab_drawable="@drawable/rfab__drawable_rfab_default"
+        rfab:rfab_color_normal="#37474f"
+        rfab:rfab_color_pressed="#263238"
+        rfab:rfab_shadow_radius="7dp"
+        rfab:rfab_shadow_color="#999999"
+        rfab:rfab_shadow_dx="0dp"
+        rfab:rfab_shadow_dy="5dp"
+        />
+</com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout>

@@ -1,0 +1,49 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+       
+        <key>com.apple.backboardd.launchapplications</key>
+        <true/>
+        
+        <key>com.apple.springboard.openapplications</key>
+        <true/>
+        
+        <key>com.apple.backboardd.launchapplications</key>
+        <true/>
+        
+        
+        <key>com.apple.springboard.launchapplications</key>
+        <true/>
+        
+        com.apple.springboard.launchapplications
+    </dict>
+</plist>
+-->
+
+<plist version="1.1">
+    <dict>
+        <key>com.apple.backboardd.launchapplications</key>
+        <true/>
+        <key>com.apple.backboardd.openapplications</key>
+        <true/>
+        <key>com.apple.springboard.launchapplications</key>
+        <true/>
+        <key>com.apple.springboard.openapplications</key>
+        <true/>
+        <key>com.apple.springboard.opensensitiveurl</key>
+        <true/>
+        <key>com.apple.springboard.debugapplications</key>
+        <true/>
+        <key>get-task-allow</key>
+        <true/>
+        <key>task_for_pid-allow</key>
+        <true/>
+        <key>run-unsigned-code</key>
+        <true/>
+        <!--<key>keychain-access-groups</key>
+        <array>
+            <string>$(AppIdentifierPrefix)com.apptime</string>
+        </array>-->
+    </dict>
+</plist>

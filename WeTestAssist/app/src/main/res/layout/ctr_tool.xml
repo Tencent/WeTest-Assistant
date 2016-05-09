@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- <RelativeLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/tool_layout">
+
+         <com.tencent.wetest.common.ui.CTRButton
+             android:layout_width="30dp"
+             android:layout_height="25dp"
+             android:id="@+id/btn_delete"
+             android:text="@string/delete"/>
+
+         <com.tencent.wetest.common.ui.CTRButton
+             android:id="@+id/btn_edit_zoom"
+             android:layout_width="30dp"
+             android:layout_height="25dp"
+             android:layout_marginLeft="30dp"
+             android:text="edit"/>
+
+         <com.tencent.wetest.common.ui.CTRButton
+             android:id="@+id/btn_edit_reduce"
+             android:layout_width="30dp"
+             android:layout_height="25dp"
+             android:layout_marginLeft="60dp"
+             android:text="edit"/>
+
+         <com.tencent.wetest.common.ui.CTRButton
+             android:id="@+id/btn_edit_ok"
+             android:layout_width="30dp"
+             android:layout_height="25dp"
+             android:layout_marginLeft="100dp"
+             android:text="edit"/>
+
+     </RelativeLayout> -->
+
+
+        <com.tencent.wetest.common.ui.CTRButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ctr_edit_btn"
+            android:background="@drawable/btn_ctr_normal"/>
+
+</RelativeLayout>
+
+
+

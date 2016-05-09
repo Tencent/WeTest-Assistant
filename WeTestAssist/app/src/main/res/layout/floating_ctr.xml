@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical" >
+
+    
+     
+    <RelativeLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+       
+ 		<TextView
+            android:id="@+id/btn_menu"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/flow_expand"
+            android:src="@drawable/flow_expand" />
+ 		
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ctr_btn"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/left_btn_action"
+                android:drawableTop="@drawable/flow_ctr"
+                 android:layout_marginTop="2dp"
+                android:text="主页"
+                android:textSize="11dp"
+                android:textColor="@color/button_exit_color_action" />
+            
+              <Button
+                android:id="@+id/fps_btn"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/left_btn_action"
+                android:drawableTop="@drawable/flow_hide_fps"
+                android:layout_marginTop="3dp"
+                android:text="截屏"
+                android:textSize="11dp"
+                android:textColor="@color/button_exit_color_action" />
+             <!-- 
+             <Button
+                android:id="@+id/scene_btn"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="80.5dp"
+                android:background="@drawable/left_btn_action"
+                android:drawableTop="@drawable/flow_ctr"
+                android:layout_marginTop="3dp"
+                android:text="记录场景"
+                android:textSize="11dp"
+                android:textColor="@color/button_exit_color_action" />
+              -->
+
+            <Button
+                android:layout_marginTop="3dp"
+                android:id="@+id/close_btn"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="86dp"
+                android:background="@drawable/left_btn_action"
+                android:drawableTop="@drawable/flow_close"
+                android:text="退出"
+                android:textSize="11dp"
+                android:textColor="@color/button_exit_color_action" />
+
+        </RelativeLayout>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/flowIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/flow_menu"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="0s" 
+            android:textSize="10dp"
+            android:textColor="#006699"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <AutoCompleteTextView
+            android:id="@+id/E_scene"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:completionThreshold="1"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="场景信息会显示在报告中哦"
+            android:gravity="center"/>
+
+        <!--  <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="helloworld"
+            android:src="@drawable/mainlogo" />-->
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <!-- 箭头 -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:fitsSystemWindows">true</item>
+         <!--<item name="android:divider">#3b4255</item>
+        <item name="android:horizontalDivider">@color/accent_material_light</item>
+        <item name="android:listDivider">@color/ab__gray_light</item>
+        <item name="android:verticalDivider">@color/accent_material_light</item>-->
+
+    </style>
+
+    <style name="actionBar" parent="Base.ThemeOverlay.AppCompat.Light">
+        <!-- Customize your theme here. -->
+
+        <!-- 箭头 -->
+        <item name="color">#FFFFFF</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+
+    </style>
+
+    <!-- 左边的箭头指示-->
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">#FFFFFF</item>
+    </style>
+
+    <style name="myRecyclerViewStyle">
+        <!-- NOTE: clipChildren should be true on API level 10 -->
+        <item name="android:clipChildren">true</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <!-- 以下部分为需要添加的部分，共两个style -->
+    <style name="itloginpushstyle" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/itlogin_push_enter</item>
+        <item name="@android:windowExitAnimation">@anim/itlogin_push_exit</item>
+    </style>
+
+    <style name="itloginfadestyle" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/itlogin_fade_enter</item>
+        <item name="@android:windowExitAnimation">@anim/itlogin_fade_exit</item>
+    </style>
+
+
+    <!--<style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">13sp</item>
+    </style>-->
+
+</resources>

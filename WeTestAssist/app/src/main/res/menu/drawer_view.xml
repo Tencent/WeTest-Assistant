@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/logout"
+
+            android:title="@string/logout"/>
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/setting"
+            android:title="@string/action_settings"/>
+        <item
+            android:id="@+id/nav_friends"
+            android:icon="@drawable/feedback"
+            android:title="@string/action_feedback"/>
+        <item
+            android:id="@+id/nav_discussion"
+            android:icon="@drawable/recommand"
+            android:title="@string/recommend_to_friend"/>
+    </group>
+
+    <item android:title="" >
+        <menu>
+            <item
+                android:id="@+id/menu_version"
+
+                android:icon="@drawable/logo"
+                android:title="@string/version_content"/>
+
+        </menu>
+    </item>
+
+</menu>

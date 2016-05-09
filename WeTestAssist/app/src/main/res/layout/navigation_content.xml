@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/ab__gray_light"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_center_button"
+            android:id="@+id/per_layout"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/selector_center_button"
+                android:layout_marginTop="5dp"
+
+                >
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/per_title"/>
+
+                    <TextView
+
+                        android:layout_width="250dp"
+                        android:gravity="center_vertical"
+                        android:layout_height="50dp"
+                        android:id="@+id/select_app_title"
+                        android:text="性能测试"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="30dp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=">" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/selector_center_button"
+
+                >
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+
+                    android:layout_width="250dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp"
+                    android:text="CPU、内存、流量和FPS监控,支持一键上传性能数据。"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:textColor="@color/btn_gray_text_color"
+                    android:layout_marginLeft="30dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="85dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_center_button"
+            android:gravity="center_vertical"
+            android:id="@+id/remote_layout"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/selector_center_button"
+
+                >
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="15dp"
+                                android:background="@drawable/remote_title"/>
+
+
+                            <TextView
+
+                                android:layout_width="250dp"
+                                android:gravity="center_vertical"
+                                android:layout_height="30dp"
+                                android:textStyle="bold"
+                                android:id="@+id/select_proj_title"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="15dp"
+                                android:text="远程调试"
+                                android:layout_marginLeft="30dp"
+
+                                />
+
+                            <!-- <TextView
+                                 android:layout_width="fill_parent"
+                                 android:gravity="center_vertical|right"
+                                 android:layout_height="30dp"
+                                 android:layout_marginRight="30dp"
+                                 android:text="@string/select_proj_content"
+                                 /> -->
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text=">"/>
+
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/selector_center_button"
+
+                >
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp" />
+
+                <TextView
+
+                    android:layout_width="250dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp"
+                    android:id="@+id/select_app_title_1"
+                    android:text="通过云真机遥控器，扫描云真机测试页面二维码，轻松控制云端手机，海量真机，任你操作。"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:textColor="@color/btn_gray_text_color"
+                    android:layout_marginLeft="30dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

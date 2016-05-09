@@ -1,0 +1,41 @@
+<com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout xmlns:rfal="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_rfal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    rfal:rfal_frame_color="#ffffff"
+    rfal:rfal_frame_alpha="0.7">
+
+    <ExpandableListView
+        android:id="@+id/loglist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    </ExpandableListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="#000000"
+        android:text="@string/abc_action_bar_home_description_format"/>
+
+    <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
+        xmlns:rfab="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_main_rfab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"
+        rfab:rfab_size="normal"
+        rfab:rfab_drawable="@drawable/rfab__drawable_rfab_default"
+        rfab:rfab_color_normal="#37474f"
+        rfab:rfab_color_pressed="#263238"
+        rfab:rfab_shadow_radius="7dp"
+        rfab:rfab_shadow_color="#999999"
+        rfab:rfab_shadow_dx="0dp"
+        rfab:rfab_shadow_dy="5dp"
+        />
+</com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout>

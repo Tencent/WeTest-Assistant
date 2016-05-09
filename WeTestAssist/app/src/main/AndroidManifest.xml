@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tencent.wefpmonitor" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+ To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
+     option is required to comply with the Google+ Sign-In developer policies
+    -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" /> <!-- To retrieve the account name (email) as part of sign-in: -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+    <application
+        android:name="com.tencent.wetest.common.application.WTApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.tencent.wetest.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+
+            <!--
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            -->
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.tencent.wetest.activity.LoadingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.wetest.activity.AppListActivity"
+            android:label="@string/title_activity_app_list"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service
+            android:name="com.tencent.wetest.service.FloatViewService"
+            android:enabled="true"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+        </service>
+
+        <activity
+            android:name="com.tencent.wetest.activity.TestResultsActivity"
+            android:label="@string/title_activity_test_results"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service
+            android:name="com.tencent.wetest.service.FloatExitService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name="com.tencent.wetest.service.StasticService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name="com.tencent.wetest.example.RapidFABActivity"
+            android:label="@string/title_activity_rapid_fab"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.tencent.wetest.example.RefreshActivity"
+            android:label="@string/title_activity_refresh"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- for wetestController -->
+
+        <activity
+            android:name="com.tencent.wetestcontroller.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- android:theme="@android:style/Theme.NoTitleBar.Fullscreen" -->
+
+        <activity
+            android:name="com.tencent.wetestcontroller.ControllerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_remote_controller"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.tencent.wetestcontroller.qrcode.CaptureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.tencent.wetestcontroller.service.FloatViewService" />
+        <service android:name="com.tencent.wetestcontroller.service.ExitViewService" />
+        <service android:name="com.tencent.wetestcontroller.service.CaptureViewService" />
+
+        <activity
+            android:name="com.tencent.wetestcontroller.HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name="com.tencent.wetest.activity.DataDetailActivity"
+            android:label="@string/title_activity_data_detail" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
+                
+        <ImageView
+                    android:id="@+id/appicon"
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:src="@drawable/logo" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/apptitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="WeTest"
+                    android:textColor="#a9a9a9"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/apppackage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="wetest远程遥控器"
+                    android:textColor="#a9a9a9"
+                    android:textSize="17dp" />
+                <Button
+			        android:id="@+id/button3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="20dp"
+			        android:text="@string/qrcode_scan"/>
+        
+    </LinearLayout>
+<!-- 
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/text1"
+        android:text="@string/withoutui"/>
+    
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/button1"
+        android:text="@string/withui"/>
+    
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/button2"
+        android:text="@string/qrcode_scan"/>
+ -->
+</RelativeLayout>

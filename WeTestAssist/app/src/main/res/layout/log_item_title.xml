@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#f0f0f0"
+            android:paddingLeft="15dp"
+            android:text="@string/log_item_title"
+            android:gravity="left|center_vertical"
+
+            android:textColor="#a5a5a5"
+            android:textSize="15sp"/>
+
+
+
+</RelativeLayout>

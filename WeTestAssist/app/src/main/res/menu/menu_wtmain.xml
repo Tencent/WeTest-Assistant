@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.tencent.WTMainActivity">
+
+
+    <!--<item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:icon="@drawable/msg"
+        app:showAsAction="always" />-->
+
+    <item android:id="@+id/action_settings"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/delete"
+        android:icon="@drawable/ic_mail_white_24dp"
+        android:orderInCategory="100"  />
+</menu>
