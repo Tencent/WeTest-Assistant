@@ -826,10 +826,12 @@
     
     if (data) {
         
+        NSLog(@"update data to file %@" , userFilePath);
         [self updateLog:[delegate fileName] content:record];
         
     }else{
         
+        NSLog(@"write data to file %@" , userFilePath);
         NSData* userData = [record dataUsingEncoding:NSUTF8StringEncoding];
         
         if ([manager fileExistsAtPath:userFilePath isDirectory:false]) {
@@ -850,7 +852,7 @@
     
     
     
-    NSLog(@"new record save end ");
+    NSLog(@"new record saved end ");
     
     return nLog;
     
@@ -1363,18 +1365,22 @@
     NSString * reStrData = @"";
     
     BOOL hasFile = false;
+    NSLog(@"loglist size = %d userfilepath = %@" , strLogList.count , userFilePath);
     for (int i = 0 ; i < strLogList.count; i++) {
         
+        NSLog(@"loglist content = %@" , strLogList[i]);
             NSArray * strLogContent = [strLogList[i] componentsSeparatedByString:@"|"];
         
-            if (strLogContent.count > 8) {
+            if (strLogContent.count > 2) {
                 
                 if (![fileName isEqualToString:strLogContent[0]]) {
                 
+                    NSLog(@"content0 = %@" ,  strLogContent[0] );
                     reStrData = [reStrData stringByAppendingFormat:@"%@\n",strLogList[i]];
                 
                 }else{
                 
+                    NSLog(@"fileName = %@ , content0 = %@" , fileName , strLogContent[0] );
                     reStrData = [reStrData stringByAppendingFormat:@"%@\n",content];
                     hasFile = true;
                 }
@@ -1384,7 +1390,14 @@
     }
     
     if (!hasFile) {
+        
+        NSLog(@"has not file");
         reStrData = [reStrData stringByAppendingFormat:@"%@\n",content];
+        
+    }else{
+        
+        NSLog(@"has file");
+        
     }
     
     NSData* userData = [reStrData dataUsingEncoding:NSUTF8StringEncoding];
@@ -1608,6 +1621,8 @@
                 
                 NSBundle *bundle = [NSBundle bundleWithPath:needle];
                 
+                NSLog(@"bundle dict : %@" ,  [bundle infoDictionary]);
+                
                 NSArray* allIcons = [[bundle infoDictionary] valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"];
                 
                 if (!allIcons) {
@@ -1620,6 +1635,8 @@
                     }
                     
                 }
+                
+                NSLog(@"allIcons : %@" ,  allIcons);
                 
                 NSString* executable = [[bundle infoDictionary] valueForKeyPath:@"CFBundleExecutable"];
                 
@@ -1673,7 +1690,9 @@
                                     
                                     NSString * header = [fileName substringToIndex:[fileName rangeOfString:@"."].location];
                                     
-                                    fileName = [NSString stringWithFormat:@"%@@2x.png",header];
+                                    NSString * suffix = [fileName substringFromIndex:[fileName rangeOfString:@"."].location];
+                                    
+                                    fileName = [NSString stringWithFormat:@"%@@2x%@",header , suffix];
                                     
                                     filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
                                     
@@ -1686,7 +1705,7 @@
                                         
                                     }else{
                                         
-                                        fileName = [NSString stringWithFormat:@"%@@3x.png",header];
+                                        fileName = [NSString stringWithFormat:@"%@@3x%@",header , suffix];
                                         
                                         filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
                                     
@@ -1701,7 +1720,7 @@
                                             
                                         }else{
                                             
-                                            fileName = [NSString stringWithFormat:@"%@.png",header];
+                                            fileName = [NSString stringWithFormat:@"%@%@",header , suffix];
                                             filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
                                             if ([manager fileExistsAtPath:filePath]) {
                                                 appIcon = [UIImage imageWithContentsOfFile:filePath];
@@ -1727,47 +1746,84 @@
                                 
                                 if ([allIcons[i] rangeOfString:@"."].location == NSNotFound) {
                                     
-                                    fileName = [NSString stringWithFormat:@"%@@2x.png",allIcons[i]];
-                                    
+                                    NSString *fileNamePng = [NSString stringWithFormat:@"%@@2x.png",allIcons[i]];
+                                    NSString *fileNameJpg = [NSString stringWithFormat:@"%@@2x.jpg",allIcons[i]];
                                     
                                     prefix = @"/private";
                                     needleRange = NSMakeRange(prefix.length,
                                                               needle.length - prefix.length );
                                     
-                                    NSString *icon_path = [needle substringWithRange:needleRange];
+                                    icon_path = [needle substringWithRange:needleRange];
                                     
-                                                                        filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
+                                    NSString *file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                    
+                                    NSString *file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                     
                                     
-                                    if ([manager fileExistsAtPath:filePath]) {
+                                    if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]) {
                                         
-                                        appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                        if ([manager fileExistsAtPath:file_png_path]) {
+                                            
+                                             appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                            
+                                        }else{
+                                            
+                                             appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                            
+                                        }
+                                       
                                         
                                         [appInfo setIcon:appIcon];
                                         
                                         break;
+                                        
                                     }else{
                                         
-                                        fileName = [NSString stringWithFormat:@"%@@3x.png",allIcons[i]];
+                                        fileNamePng = [NSString stringWithFormat:@"%@@3x.png",allIcons[i]];
+                                        fileNameJpg = [NSString stringWithFormat:@"%@@3x.jpg",allIcons[i]];
                                         
+                                        file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                        file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                         
-                                        filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
-                                        
-                                        if ([manager fileExistsAtPath:filePath isDirectory:false]) {
-                                            appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                        if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]) {
+                                            
+                                            if ([manager fileExistsAtPath:file_png_path]) {
+                                                
+                                                appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                                
+                                            }else{
+                                                
+                                                appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                                
+                                            }
                                             
                                             [appInfo setIcon:appIcon];
+                                            
                                             break;
+                                            
                                         }else{
                                             
-                                            fileName = [NSString stringWithFormat:@"%@.png",allIcons[i]];
+                                            fileNamePng = [NSString stringWithFormat:@"%@.png",allIcons[i]];
+                                            fileNameJpg = [NSString stringWithFormat:@"%@.jpg",allIcons[i]];
+
+                                            file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                            file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                             
-                                            filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
+                                            NSLog(@"file png path = %@ , file jpg path = %@" , file_png_path , file_jpg_path);
                                             
-                                            if ([manager fileExistsAtPath:filePath isDirectory:false]) {
-                                                appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                            if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]){
+                                                if ([manager fileExistsAtPath:file_png_path]) {
+                                                    
+                                                    appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                                    
+                                                }else{
+                                                    
+                                                    appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                                    
+                                                }
                                                 
                                                 [appInfo setIcon:appIcon];
+
                                                 break;
                                             }
                                         }
@@ -1870,7 +1926,7 @@
                 
                 if (![appInfo icon]) {
                     
-                    
+                    NSLog(@"no icon of the %@" , [appInfo appPkgName]);
                 }else{
                     
                     [array addObject:appInfo];
@@ -1984,10 +2040,8 @@
                     
                     NSString *icon_path = [needle substringWithRange:needleRange];
                     
-                   
                     
                     if (allIcons) {
-                        
                         
                         NSString *fileName = nil;
                         
@@ -2002,16 +2056,13 @@
                                 
                                 if ([manager fileExistsAtPath:filePath]) {
                                     
-                                    
                                     if (([fileName rangeOfString:@"2x"].location == NSNotFound) && ([fileName rangeOfString:@"3x"].location == NSNotFound)) {
-                                        
-                                        
-                                        
                                         
                                         NSString * header = [fileName substringToIndex:[fileName rangeOfString:@"."].location];
                                         
+                                        NSString * suffix = [fileName substringFromIndex:[fileName rangeOfString:@"."].location];
                                         
-                                        fileName = [NSString stringWithFormat:@"%@@2x.png",header];
+                                        fileName = [NSString stringWithFormat:@"%@@2x%@",header , suffix];
                                         
                                         filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
                                         
@@ -2024,22 +2075,22 @@
                                             
                                         }else{
                                             
-                                            fileName = [NSString stringWithFormat:@"%@@3x.png",header];
+                                            fileName = [NSString stringWithFormat:@"%@@3x%@",header , suffix];
                                             
                                             filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
-                                          
+                                            
                                             if ([manager fileExistsAtPath:filePath]) {
                                                 
-                                               
                                                 appIcon = [UIImage imageWithContentsOfFile:filePath];
                                                 
+                                                
                                                 [appInfo setIcon:appIcon];
-                                          
+                                                
                                                 break;
                                                 
                                             }else{
                                                 
-                                                fileName = [NSString stringWithFormat:@"%@.png",header];
+                                                fileName = [NSString stringWithFormat:@"%@%@",header , suffix];
                                                 filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
                                                 if ([manager fileExistsAtPath:filePath]) {
                                                     appIcon = [UIImage imageWithContentsOfFile:filePath];
@@ -2055,7 +2106,7 @@
                                         appIcon = [UIImage imageWithContentsOfFile:filePath];
                                         
                                         [appInfo setIcon:appIcon];
-                                       
+                                        
                                         break;
                                         
                                     }
@@ -2065,48 +2116,84 @@
                                     
                                     if ([allIcons[i] rangeOfString:@"."].location == NSNotFound) {
                                         
-                                        fileName = [NSString stringWithFormat:@"%@@2x.png",allIcons[i]];
-                                        
+                                        NSString *fileNamePng = [NSString stringWithFormat:@"%@@2x.png",allIcons[i]];
+                                        NSString *fileNameJpg = [NSString stringWithFormat:@"%@@2x.jpg",allIcons[i]];
                                         
                                         prefix = @"/private";
                                         needleRange = NSMakeRange(prefix.length,
                                                                   needle.length - prefix.length );
                                         
-                                        NSString *icon_path = [needle substringWithRange:needleRange];
+                                        icon_path = [needle substringWithRange:needleRange];
                                         
-                                       
-                                        filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
+                                        NSString *file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                        
+                                        NSString *file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                         
                                         
-                                        if ([manager fileExistsAtPath:filePath]) {
+                                        if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]) {
                                             
-                                            appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                            if ([manager fileExistsAtPath:file_png_path]) {
+                                                
+                                                appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                                
+                                            }else{
+                                                
+                                                appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                                
+                                            }
+                                            
                                             
                                             [appInfo setIcon:appIcon];
                                             
                                             break;
+                                            
                                         }else{
                                             
-                                            fileName = [NSString stringWithFormat:@"%@@3x.png",allIcons[i]];
+                                            fileNamePng = [NSString stringWithFormat:@"%@@3x.png",allIcons[i]];
+                                            fileNameJpg = [NSString stringWithFormat:@"%@@3x.jpg",allIcons[i]];
                                             
+                                            file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                            file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                             
-                                            filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
-                                            
-                                            if ([manager fileExistsAtPath:filePath isDirectory:false]) {
-                                                appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                            if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]) {
+                                                
+                                                if ([manager fileExistsAtPath:file_png_path]) {
+                                                    
+                                                    appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                                    
+                                                }else{
+                                                    
+                                                    appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                                    
+                                                }
                                                 
                                                 [appInfo setIcon:appIcon];
+                                                
                                                 break;
+                                                
                                             }else{
                                                 
-                                                fileName = [NSString stringWithFormat:@"%@.png",allIcons[i]];
+                                                fileNamePng = [NSString stringWithFormat:@"%@.png",allIcons[i]];
+                                                fileNameJpg = [NSString stringWithFormat:@"%@.jpg",allIcons[i]];
                                                 
-                                                filePath = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileName];
+                                                file_png_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNamePng];
+                                                file_jpg_path = [[NSString alloc]  initWithFormat:@"%@/%@",icon_path,fileNameJpg];
                                                 
-                                                if ([manager fileExistsAtPath:filePath isDirectory:false]) {
-                                                    appIcon = [UIImage imageWithContentsOfFile:filePath];
+                                                NSLog(@"file png path = %@ , file jpg path = %@" , file_png_path , file_jpg_path);
+                                                
+                                                if ([manager fileExistsAtPath:file_png_path isDirectory:false] || [manager fileExistsAtPath:file_jpg_path isDirectory:false]){
+                                                    if ([manager fileExistsAtPath:file_png_path]) {
+                                                        
+                                                        appIcon = [UIImage imageWithContentsOfFile:file_png_path];
+                                                        
+                                                    }else{
+                                                        
+                                                        appIcon = [UIImage imageWithContentsOfFile:file_jpg_path];
+                                                        
+                                                    }
                                                     
                                                     [appInfo setIcon:appIcon];
+                                                    
                                                     break;
                                                 }
                                             }
